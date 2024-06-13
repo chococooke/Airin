@@ -1,0 +1,161 @@
+/** base */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.feed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.outlet {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 90%;
+}
+
+/** Responsive */
+/** Components */
+.btn {
+  background-color: black;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  width: fit-content;
+  border: none;
+  transition: 0.2s all ease;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px #d70f0f;
+}
+
+.sidebar {
+  border: 1px solid black;
+  height: 100%;
+  padding: 2rem;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.sidebar__nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar__nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar__nav-list--item {
+  padding: 1rem;
+  border: 1px solid transparent;
+}
+.sidebar__nav-list--item > a {
+  text-decoration: none;
+  color: inherit;
+}
+.sidebar__nav-list--item:hover {
+  border: 1px solid black;
+}
+
+/** Pages */
+.form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid black;
+  margin: 2rem;
+  font-size: 10px;
+}
+.form__control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+.form__control > * {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem 0.2rem;
+  margin: 0.3rem auto;
+  width: 100%;
+}
+.form-popup {
+  text-align: left;
+  z-index: 100;
+  position: fixed;
+  background-color: white;
+  top: 40%;
+  left: 50%;
+  padding: 1rem;
+  width: 40%;
+  transform: translateX(-50%) translateY(-40%);
+}
+.form-popup .filePicker {
+  border: 1px dashed #333;
+  text-align: center;
+  display: inline;
+  padding: 0.2rem auto;
+  position: relative;
+  margin: 0.4rem auto;
+}
+.form-popup .filePicker > input {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+}
+.form-popup .filePicker > label {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0.3;
+}
+.form-popup > div {
+  margin: 1rem auto;
+  width: 100%;
+}
+.form-popup > div > * {
+  margin: 0.4rem auto;
+}
+.form-popup > div > textarea {
+  text-align: left;
+  font-family: sans-serif;
+}
+.form-popup > div > textarea::placeholder {
+  font-family: sans-serif;
+  text-align: left;
+}
+
+/*# sourceMappingURL=main.css.map */

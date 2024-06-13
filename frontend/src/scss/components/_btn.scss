@@ -1,0 +1,14 @@
+.btn {
+    background-color: black;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    width: fit-content;
+    border: none;
+    transition: 0.2s all ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px #d70f0f;
+    }
+}
