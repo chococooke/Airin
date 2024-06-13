@@ -4,8 +4,12 @@ import { Outlet } from "react-router-dom"
 const Feed = () => {
     return (
         <>
-            <Sidebar />
-            <Outlet />
+            <div className="feed">
+                <Sidebar />
+                <div className="outlet">
+                    <Outlet />
+                </div>
+            </div>
         </>
     )
 }
