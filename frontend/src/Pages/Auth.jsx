@@ -3,6 +3,7 @@ const Auth = () => {
         <>
             <form className="form">
                 <div className="form__control">
+                    <h1 className="form__title">Auth Form</h1>
                     <input
                         placeholder="Username"
                         type="text"
