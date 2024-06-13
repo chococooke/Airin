@@ -6,6 +6,7 @@ import Feed from "./Pages/Feed";
 import Notifications from "./Pages/Notifilcations";
 import Profile from "./Pages/Profile";
 import Discover from "./Pages/Discover";
+import Auth from "./Pages/Auth";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
                 element: <Profile />
             }
         ]
+    },
+    {
+        path: "/auth",
+        element: <Auth />
     }
 ]);
 
