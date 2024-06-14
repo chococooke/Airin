@@ -1,21 +1,26 @@
-import { Link } from "react-router-dom";
-import CreatePost from "../Pages/CreatePost";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import CreatePost from "../Pages/CreatePost";
 
 const Sidebar = () => {
+    const navigate = useNavigate();
     const [showCreatePostForm, setShowCreatePostForm] = useState(false);
 
     const toggleShowCreatePostForm = (e) => {
-        e.preventDefault();
-
         setShowCreatePostForm(!showCreatePostForm)
+    }
+
+    const logOut = () => {
+        navigate('/auth');
     }
 
     return (
         <>
             {
-                showCreatePostForm && <CreatePost close={toggleShowCreatePostForm} />
+                showCreatePostForm
+                && <CreatePost close={toggleShowCreatePostForm} />
             }
+
             <div className="sidebar">
                 <nav className="sidebar__nav">
                     <ul className="sidebar__nav-list">
@@ -35,14 +40,18 @@ const Sidebar = () => {
                             <Link to={'/settings'}>Settings</Link>
                         </li>
                         <li className="sidebar__nav-list--item">
-                            <button
-                                onClick={(e) => toggleShowCreatePostForm(e)}
-                            >
+                            <button onClick={(e) => toggleShowCreatePostForm(e)}>
                                 Create Post
                             </button>
                         </li>
                     </ul>
-                    <button className="btn" >Log out</button>
+
+                    <button
+                        className="btn"
+                        onClick={() => logOut()}
+                    >
+                        Log out
+                    </button>
                 </nav>
             </div>
         </>

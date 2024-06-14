@@ -102,9 +102,12 @@ html {
 .form__control > * {
   font-size: 1.3rem;
   text-align: center;
-  padding: 1rem 0.2rem;
+  padding: 1rem 0.4rem;
   margin: 0.3rem auto;
   width: 100%;
+}
+.form__control > input {
+  text-align: left;
 }
 .form-popup {
   text-align: left;
@@ -156,6 +159,17 @@ html {
 .form-popup > div > textarea::placeholder {
   font-family: sans-serif;
   text-align: left;
+}
+
+.form__wrapper {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=main.css.map */
