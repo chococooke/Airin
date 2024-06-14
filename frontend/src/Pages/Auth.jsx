@@ -1,4 +1,27 @@
+import { useState } from "react";
+
 const Auth = () => {
+    const formTypes = Object.freeze({
+        LOGIN: 'login',
+        REGISTER: 'register'
+    });
+
+    const [formType, setFormType] = useState(formTypes.LOGIN);
+
+    const toggleFormType = (e) => {
+        e.preventDefault();
+
+        formType === formTypes.LOGIN
+            ? setFormType(formTypes.REGISTER)
+            : setFormType(formTypes.LOGIN)
+    }
+
+    // handleSubmit
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Auth initiated');
+    }
+
     return (
         <>
             <form className="form">
@@ -16,10 +39,20 @@ const Auth = () => {
                         className="form__input"
                     />
 
+                    <button onClick={(e) => toggleFormType(e)}>
+                        {formType === formTypes.LOGIN
+                            ? 'Register Instead'
+                            : 'Log in instead'}
+                    </button>
+
                     <button
                         type='submit'
-                        className="btn">
-                        Submit
+                        className="btn"
+                        onClick={(e) => handleSubmit(e)}
+                    >
+                        {formType === formTypes.LOGIN
+                            ? `login`
+                            : 'register'}
                     </button>
                 </div>
             </form>
